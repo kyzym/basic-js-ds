@@ -13,26 +13,26 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 class Stack {
-  constructor() {
-    this.stackArray = [];
-  }
+  stackArray = [];
 
   push(element) {
     this.stackArray.push(element);
   }
 
   peek() {
-    if (!this.stackArray.length) {
-      return undefined;
+    const { stackArray } = this;
+    if (!stackArray.length) {
+      return;
     }
-    return this.stackArray[this.stackArray.length - 1];
+    return stackArray.at(-1);
   }
 
   pop() {
-    if (!this.stackArray.length) {
-      return undefined;
+    const { stackArray } = this;
+    if (!stackArray.length) {
+      return;
     }
-    return this.stackArray.pop();
+    return stackArray.pop();
   }
 }
 
